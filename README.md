@@ -1,4 +1,4 @@
-* Transformer Based Punctuation Restoration Models for Turkish
+# Transformer Based Punctuation Restoration Models for Turkish
 
 With the latest development in mobile devices and social networks, many users share their opinions, daily routines or news. Speed of the communication is getting more important but the quality of the text is getting less. One of the most common mistake in the texts is not putting punctuations to correct places in it. This process can be called punctuation restoration in this paper. The well-known application of the punctuation restoration is automatic speech recognition. In automatic speech recognition, the text is generated from the voice and the task has two important challenges to write sentences. The first challenge is to generate grammatically correct sentences. The second challenge is to restore punctuations correctly.    
 
