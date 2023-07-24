@@ -1,6 +1,0 @@
-.DS_STORE
-.gitignore
-model_save
-storage
-scripts
-__pycache__
