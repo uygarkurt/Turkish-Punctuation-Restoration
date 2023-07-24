@@ -40,10 +40,11 @@ sample_text = "Türkiye toprakları üzerindeki ilk yerleşmeler Yontma Taş Dev
 
 out = pipe(sample_text)
 ```
-to use a different pre-trained model you can just replace the `model` argument.
+
+To use a different pre-trained model you can just replace the `model` argument with one of the other per-trained models we provided.
 
 ## Results
-Scores of the models can be summarized as below:
+`F1`, `Precision` and `Recall` scores for each model and punctuation mark are summarized below.
 
 |   Model  |  PERIOD  |          |          |   COMMA  |          |          | QUESTION |          |          |  OVERALL |          |          |
 |:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
