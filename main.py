@@ -12,12 +12,10 @@ from transformers import BertTokenizerFast, BertForTokenClassification, DataColl
 
 from utils import data_load, tokenize_and_align_labels, get_test_results, prepare_compute_metrics
 
-## Silence Warnings
 transformers.utils.logging.set_verbosity_error()
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 warnings.filterwarnings("ignore")
 
-## Deterministic Reproducibility
 RANDOM_SEED = 42
 
 random.seed(RANDOM_SEED)
@@ -28,7 +26,6 @@ torch.cuda.manual_seed_all(RANDOM_SEED)
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
-## Get the Device
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 gpu_count = torch.cuda.device_count()
@@ -37,7 +34,6 @@ print(f"Number of GPUs: {gpu_count}", "\n")
 for i in range(gpu_count):
     print(torch.cuda.get_device_name(i))
 
-## Denote Labels
 id2label = { 
             0: "O",
             1: "PERIOD",
@@ -47,29 +43,9 @@ id2label = {
 label2id = {v: k for k, v in id2label.items()}
 label_list = list(id2label.values())
 
-## Load Model and Tokenizer
 tokenizer = BertTokenizerFast.from_pretrained("dbmdz/bert-base-turkish-cased")
 model = BertForTokenClassification.from_pretrained("dbmdz/bert-base-turkish-cased", num_labels = len(label_list), id2label = id2label, label2id = label2id)
 
-## Load Data
-"""
-train_ds.features -> {'id': Value(dtype='string', id=None), 'tokens': Sequence(feature=Value(dtype='string', id=None), length=-1, id=None), 'tags': Sequence(feature=ClassLabel(names=['O', 'PERIOD', 'COMMA', 'QUESTION_MARK'], id=None), length=-1, id=None)}
-
-tokenized_punc_ds -> DatasetDict({
-    train: Dataset({
-            features: ['id, 'tokens', 'tags', 'input_ids', 'token_type_ids', 'attention_mask', 'labels'],
-            num_rows: 87963
-        })
-    val: Dataset({
-            features: ['id', 'tokens', 'tags', 'input_ids', 'token_type_ids', 'attention_mask', 'labels'],
-            num_rows: 29321
-        })
-    test: Dataset({
-            features: ['id', 'tokens', 'tags', 'input_ids', 'token_type_ids', 'attention_mask', 'labels'],
-            num_rows: 29322
-        })
-    })
-"""
 train_path = "./multitarget-ted/en-tr/ted_train_tr.csv"
 val_path = "./multitarget-ted/en-tr/ted_valid_tr.csv"
 test_path = "./multitarget-ted/en-tr/ted_test_tr.csv"
@@ -78,24 +54,15 @@ train_ds = data_load(train_path, label2id, label_list)
 val_ds = data_load(val_path, label2id, label_list)
 test_ds = data_load(test_path, label2id, label_list)
 
-#%# REMOVE SLICING FOR PRODUCTION #%#
 punc_ds = DatasetDict({
-    "train": train_ds.select(range(100)),
-    "val": val_ds.select(range(10)),
-    "test": test_ds.select(range(10))
+    "train": train_ds,
+    "val": val_ds,
+    "test": test_ds,
 })
-
-#punc_ds = DatasetDict({
-#    "train": train_ds,
-#    "val": val_ds,
-#    "test": test_ds,
-#})
-
 
 tokenized_punc_ds = punc_ds.map(tokenize_and_align_labels, batched=True, fn_kwargs=({"tokenizer": tokenizer}))
 data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer)
 
-## Training
 EPOCH = 3
 compute_metrics = prepare_compute_metrics(label_list)
 
@@ -137,7 +104,6 @@ print(f"File name: {curr_time}")
 model.save_pretrained(f"./model_save/{curr_time}", id2label=id2label, label2id=label2id, num_labels=len(label_list))
 tokenizer.save_pretrained(f"./model_save/{curr_time}")
 
-## Testing
 model = BertForTokenClassification.from_pretrained(f"./model_save/{curr_time}", num_labels = len(label_list), id2label = id2label, label2id = label2id, local_files_only=True).to(device)
 tokenizer = BertTokenizerFast.from_pretrained(f"./model_save/{curr_time}", local_files_only=True)
 
