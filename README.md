@@ -44,7 +44,7 @@ out = pipe(sample_text)
 To use a different pre-trained model you can just replace the `model` argument with one of the other per-trained models we provided.
 
 ## Results
-`F1`, `Precision` and `Recall` scores for each model and punctuation mark are summarized below.
+`Precision` and `Recall` and `F1` scores for each model and punctuation mark are summarized below.
 
 |   Model  |          |  PERIOD  |          |          |  COMMA   |          |          | QUESTION |          |          | OVERALL  |          |
 |:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
