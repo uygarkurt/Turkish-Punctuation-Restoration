@@ -46,7 +46,7 @@ To use a different pre-trained model you can just replace the `model` argument w
 ## Results
 `F1`, `Precision` and `Recall` scores for each model and punctuation mark are summarized below.
 
-|   Model  |  PERIOD  |          |          |   COMMA  |          |          | QUESTION |          |          |  OVERALL |          |          |
+|   Model  |          |  PERIOD  |          |   COMMA  |          |          | QUESTION |          |          |  OVERALL |          |          |
 |:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
 |          |     P    |     R    |    F1    |     P    |     R    |    F1    |     P    |     R    |    F1    |     P    |     R    |    F1    |
 |   BERT   | 0.972602 | 0.947504 | 0.959952 | 0.576145 |  0.70001 | 0.632066 | 0.927642 | 0.911342 |  0.91942 | 0.825506 | 0.852952 | 0.837146 |
