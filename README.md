@@ -15,8 +15,8 @@ Dataset can be summarized as below:
 ## Available Models
 We experimented with BERT, ELECTRA and ConvBERT. Pre-trained models can be accessed via Huggingface.
 
-BERT: https://huggingface.co/uygarkurt/bert-restore-punctuation-turkish
-ELECTRA: https://huggingface.co/uygarkurt/electra-restore-punctuation-turkish
+BERT: https://huggingface.co/uygarkurt/bert-restore-punctuation-turkish \
+ELECTRA: https://huggingface.co/uygarkurt/electra-restore-punctuation-turkish \
 ConvBERT: https://huggingface.co/uygarkurt/convbert-restore-punctuation-turkish
 
 ## Training
@@ -27,7 +27,7 @@ For training you will need `transformers`, `datasets`. You can install the versi
 To start the training run `python main.py`. By defualt BERT will be used for training. Trained models will be saved under `model_save/`.
 
 ## Training With Different Models
-BERT is used by default. To use a different model change the tokenizer and model loaders at lines `46` and `47`.
+BERT is used by default. To train with a different base model, change the tokenizer and model loaders which are `tokenizer = BertTokenizerFast.from_pretrained("dbmdz/bert-base-turkish-cased")` and `model = BertForTokenClassification.from_pretrained("dbmdz/bert-base-turkish-cased", num_labels = len(label_list), id2label = id2label, label2id = label2id)`  at `main.py` with the line numbers `46` and `47`.
 
 ## Usage
 Recommended usage is via Huggingface. You can run an inference using the BERT model with the following code:
