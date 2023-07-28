@@ -1,4 +1,3 @@
-## Import Libraries
 import os
 import torch
 import timeit
@@ -8,7 +7,7 @@ import transformers
 import numpy as np
 from datetime import datetime
 from datasets import DatasetDict
-from transformers import BertTokenizerFast, BertForTokenClassification, DataCollatorForTokenClassification, TrainingArguments, Trainer, AdamW, get_linear_schedule_with_warmup
+from transformers import BertTokenizerFast, BertForTokenClassification, DataCollatorForTokenClassification, TrainingArguments, Trainer, AdamW, get_linear_schedule_with_warmup, pipeline
 
 from utils import data_load, tokenize_and_align_labels, get_test_results, prepare_compute_metrics
 
@@ -107,9 +106,16 @@ tokenizer.save_pretrained(f"./model_save/{curr_time}")
 model = BertForTokenClassification.from_pretrained(f"./model_save/{curr_time}", num_labels = len(label_list), id2label = id2label, label2id = label2id, local_files_only=True).to(device)
 tokenizer = BertTokenizerFast.from_pretrained(f"./model_save/{curr_time}", local_files_only=True)
 
-test_len = len(tokenized_punc_ds["test"])
-start = timeit.default_timer()
 test_results = get_test_results(model, tokenizer, label_list, tokenized_punc_ds, device)
-stop = timeit.default_timer()
-print(f"Inference Time: {stop-start:.2f}s for {test_len} sentences")
 print(test_results)
+
+sent_list = []
+for sample in test_ds:
+    sent_list.append(" ".join(sample["tokens"]))
+n_sents = len(sent_list)
+
+pipe = pipeline(task="token-classification", model=model, tokenizer=tokenizer, device=0)
+start = timeit.default_timer()
+inf_res = pipe(sent_list)
+stop = timeit.default_timer()
+print(f"Inference Time: {stop-start:.2f}s for {n_sents} sentences")
