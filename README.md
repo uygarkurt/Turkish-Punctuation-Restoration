@@ -6,11 +6,13 @@ Dataset is provided in `data/` directory as train, validation and test splits.
 
 Dataset can be summarized as below:
 
+<!--
 |    Split    |  Total  | Period (.) | Comma (,) | Question (?) |
 |:-----------:|:-------:|:----------:|:---------:|:------------:|
 |    Train    | 1471806 |   124817   |   98194   |     9816     |
 | Validation  |  180326 |    15306   |   11980   |     1199     |
 |   Test      |  182487 |    15524   |   12242   |     1255     |
+-->
 
 ## Available Models
 We experimented with BERT, ELECTRA and ConvBERT. Pre-trained models can be accessed via Huggingface.
