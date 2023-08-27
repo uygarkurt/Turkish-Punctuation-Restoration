@@ -5,8 +5,16 @@
 
 <div align="center">
     <a href="">
-        <img alt="#thelounge IRC channel on Libera.Chat"
+        <img alt="open-source-image"
 		src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103">
+    </a>
+    <a href="https://arxiv.org/abs/tba">
+        <img alt="arxiv-image"
+		src=https://img.shields.io/badge/arXiv-tba-b31b1b.svg">
+    </a>
+    <a href="https://github.com/Naereen/StrapDown.js/blob/master/LICENSE">
+        <img alt="license-image"
+		src="https://badgen.net/github/license/Naereen/Strapdown.js">
     </a>
 </div>
 
