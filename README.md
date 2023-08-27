@@ -1,6 +1,8 @@
-[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![arXiv](https://img.shields.io/badge/arXiv-tba-b31b1b.svg)](https://arxiv.org/abs/tba)
-[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+<div align="center">
+    [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)]
+    [![arXiv](https://img.shields.io/badge/arXiv-tba-b31b1b.svg)](https://arxiv.org/abs/tba)
+    [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+</div>
 
 # Transformer Based Punctuation Restoration Models for Turkish
 This repository contains the implementation of the paper Transformer Based Punctuation Restoration for Turkish. We present three pre-trained transformer models to predict **period**, **comma** and **question marks** for the Turkish language.
