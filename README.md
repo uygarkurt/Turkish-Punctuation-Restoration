@@ -1,8 +1,3 @@
-
-[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103){style="display: block; margin: 0 auto"}]
-[![arXiv](https://img.shields.io/badge/arXiv-tba-b31b1b.svg)](https://arxiv.org/abs/tba)
-[![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-
 <div align="center">
     <a href="">
         <img alt="open-source-image"
@@ -10,7 +5,7 @@
     </a>
     <a href="https://arxiv.org/abs/tba">
         <img alt="arxiv-image"
-		src=https://img.shields.io/badge/arXiv-tba-b31b1b.svg">
+		src="https://img.shields.io/badge/arXiv-tba-b31b1b.svg">
     </a>
     <a href="https://github.com/Naereen/StrapDown.js/blob/master/LICENSE">
         <img alt="license-image"
