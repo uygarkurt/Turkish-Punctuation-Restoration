@@ -1,3 +1,5 @@
+[![Downloads][downloads-badge]][releases]
+
 # Transformer Based Punctuation Restoration Models for Turkish
 This repository contains the implementation of the paper Transformer Based Punctuation Restoration for Turkish. We present three pre-trained transformer models to predict **period**, **comma** and **question marks** for the Turkish language.
 
