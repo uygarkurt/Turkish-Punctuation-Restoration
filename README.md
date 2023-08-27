@@ -1,4 +1,4 @@
-[![Downloads][downloads-badge]][releases]
+[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg?style=flat)]()  
 
 # Transformer Based Punctuation Restoration Models for Turkish
 This repository contains the implementation of the paper Transformer Based Punctuation Restoration for Turkish. We present three pre-trained transformer models to predict **period**, **comma** and **question marks** for the Turkish language.
