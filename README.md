@@ -4,7 +4,10 @@
 [![GitHub license](https://badgen.net/github/license/Naereen/Strapdown.js)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
 <div align="center">
-    <a href="https://badges.frapsoft.com/os/v1/open-source.svg?v=103">Open Source Love svg1</a>
+    <a href="">
+        <img alt="#thelounge IRC channel on Libera.Chat"
+		src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103">
+    </a>
 </div>
 
 # Transformer Based Punctuation Restoration Models for Turkish
