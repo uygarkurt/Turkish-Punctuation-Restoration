@@ -17,6 +17,10 @@
         <img alt="youtube-image"
         src="https://img.shields.io/badge/YouTube-uygarkurtai-gray?style=flat&logo=YouTube&labelColor=%23FF0000">
     </a>
+    <a href="">
+        <img alt="linkedin-image"
+        src="https://img.shields.io/badge/LinkedIn-uygarr-gray?logo=linkedin&labelColor=%230072b1">
+    </a>
 </div>
 
 # Transformer Based Punctuation Restoration Models for Turkish
