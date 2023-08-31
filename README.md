@@ -11,6 +11,8 @@
         <img alt="license-image"
 		src="https://badgen.net/github/license/Naereen/Strapdown.js">
     </a>
+</div>
+<div align="center">
     <a href="https://www.youtube.com/channel/UChYsr-DIK7fSnTIhir0s3OQ">
         <img alt="youtube-image"
         src="https://img.shields.io/badge/YouTube-uygarkurtai-gray?style=flat&logo=YouTube&labelColor=%23FF0000">
