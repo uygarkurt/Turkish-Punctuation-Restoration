@@ -11,6 +11,10 @@
         <img alt="license-image"
 		src="https://badgen.net/github/license/Naereen/Strapdown.js">
     </a>
+    <a href="https://www.youtube.com/channel/UChYsr-DIK7fSnTIhir0s3OQ">
+        <img alt="youtube-image"
+        src="https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white">
+    </a>
 </div>
 
 # Transformer Based Punctuation Restoration Models for Turkish
