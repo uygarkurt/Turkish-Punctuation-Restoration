@@ -24,11 +24,10 @@
         src="https://img.shields.io/badge/LinkedIn-uygarr-gray?logo=linkedin&labelColor=%230072b1">
     </a>
 </div>
+<br/>
 <div align="center">
     <p>Liked our work? give us a ⭐!</p>
 </div>
-
-<br/>
 
 This repository contains the official implementation of the paper Transformer Based Punctuation Restoration for Turkish. Aim of this work is correctly place pre-decided punctuation marks in a given text.  We present three pre-trained transformer models to predict **period(.)**, **comma(,)** and **question(?)** marks for the Turkish language.
 
