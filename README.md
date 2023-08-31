@@ -62,7 +62,7 @@ Trained model will be saved under `./model_save` directory.
 
 If you want to train with a model other then BERT change the arguments of `.from_pretrained()` accordingly.
 
-## Data <a class="anchor" id="train></a>
+## Data <a class="anchor" id="data"></a>
 Dataset is provided in `data/` directory as train, validation and test splits.
 
 Dataset can be summarized as below:
