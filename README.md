@@ -1,3 +1,5 @@
+# Transformer Based Punctuation Restoration Models for Turkish
+
 <div align="center">
     <a href="">
         <img alt="open-source-image"
@@ -23,10 +25,42 @@
     </a>
 </div>
 
-# Transformer Based Punctuation Restoration Models for Turkish
-This repository contains the implementation of the paper Transformer Based Punctuation Restoration for Turkish. We present three pre-trained transformer models to predict **period**, **comma** and **question marks** for the Turkish language.
+This repository contains the official implementation of the paper Transformer Based Punctuation Restoration for Turkish. We present three pre-trained transformer models to predict **period**, **comma** and **question marks** for the Turkish language.
 
-## Data
+## Table of Contents
+* [Usage](#usage)
+    * [Inference](#inference)
+    * [Training](#train)
+* [Data](#data)
+* [Available Models](#models)
+* [Results](#results)
+
+## Usage <a class="anchor" id="usage"></a>
+
+### Inference <a class="anchor" id="inference"></a>
+Recommended usage is via HuggingFace. You can run an inference using the pre-trained BERT model with the following code:
+``` 
+from transformers import pipeline
+
+pipe = pipeline(task="token-classification", model="uygarkurt/bert-restore-punctuation-turkish")
+
+sample_text = "Türkiye toprakları üzerindeki ilk yerleşmeler Yontma Taş Devri'nde başlar Doğu Trakya'da Traklar olmak üzere Hititler Frigler Lidyalılar ve Dor istilası sonucu Yunanistan'dan kaçan Akalar tarafından kurulan İyon medeniyeti gibi çeşitli eski Anadolu medeniyetlerinin ardından Makedonya kralı Büyük İskender'in egemenliğiyle ve fetihleriyle birlikte Helenistik Dönem başladı"
+
+out = pipe(sample_text)
+```
+
+To use a different pre-trained model you can just replace the `model` argument with one of the other [available models](#models) we provided.
+
+### Training <a class="anchor" id="train"></a>
+For training you will need `transformers`, `datasets`. You can install the versions we used with the following commands: `pip3 install transformers==4.25.1`
+
+To train a model run `python main.py`. This will train the BERT model by default on given dataset on the path specified by the `train_path`, `val_path` and `test_path` variables located at the `main.py`.
+
+Trained model will be saved under `./model_save` directory.
+
+If you want to train with a model other then BERT change the arguments of `.from_pretrained()` accordingly.
+
+## Data <a class="anchor" id="train></a>
 Dataset is provided in `data/` directory as train, validation and test splits.
 
 Dataset can be summarized as below:
@@ -39,38 +73,14 @@ Dataset can be summarized as below:
 |   Test      |  182487 |    15524   |   12242   |     1255     |
 -->
 
-## Available Models
+## Available Models <a class="anchor" id="models"></a>
 We experimented with BERT, ELECTRA and ConvBERT. Pre-trained models can be accessed via Huggingface.
 
 BERT: https://huggingface.co/uygarkurt/bert-restore-punctuation-turkish \
 ELECTRA: https://huggingface.co/uygarkurt/electra-restore-punctuation-turkish \
 ConvBERT: https://huggingface.co/uygarkurt/convbert-restore-punctuation-turkish
 
-## Training
-For training you will need `transformers`, `datasets`. You can install the versions we used with the following commands:
-`pip3 install transformers==4.25.1`
-`pip3 install datasets==2.8.0`
-
-To start the training run `python main.py`. By defualt BERT will be used for training. Trained models will be saved under `model_save/` in the main directory.
-
-## Training With Different Models
-BERT is used by default. To train with a different base model, change the tokenizer and model loaders which are `tokenizer = BertTokenizerFast.from_pretrained("dbmdz/bert-base-turkish-cased")` and `model = BertForTokenClassification.from_pretrained("dbmdz/bert-base-turkish-cased", num_labels = len(label_list), id2label = id2label, label2id = label2id)`  at `main.py` with the line numbers `46` and `47`.
-
-## Usage
-Recommended usage is via Huggingface. You can run an inference using the BERT model with the following code:
-``` 
-from transformers import pipeline
-
-pipe = pipeline(task="token-classification", model="uygarkurt/bert-restore-punctuation-turkish")
-
-sample_text = "Türkiye toprakları üzerindeki ilk yerleşmeler Yontma Taş Devri'nde başlar Doğu Trakya'da Traklar olmak üzere Hititler Frigler Lidyalılar ve Dor istilası sonucu Yunanistan'dan kaçan Akalar tarafından kurulan İyon medeniyeti gibi çeşitli eski Anadolu medeniyetlerinin ardından Makedonya kralı Büyük İskender'in egemenliğiyle ve fetihleriyle birlikte Helenistik Dönem başladı"
-
-out = pipe(sample_text)
-```
-
-To use a different pre-trained model you can just replace the `model` argument with one of the other per-trained models we provided.
-
-## Results
+## Results <a class="results" id="results"></a>
 `Precision` and `Recall` and `F1` scores for each model and punctuation mark are summarized below.
 
 <!--
