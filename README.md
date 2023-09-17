@@ -19,7 +19,7 @@
     <p>Liked our work? give us a ⭐!</p>
 </div>
 
-This repository contains the official implementation of the paper Transformer Based Punctuation Restoration for Turkish. Aim of this work is correctly place pre-decided punctuation marks in a given text.  We present three pre-trained transformer models to predict **period(.)**, **comma(,)** and **question(?)** marks for the Turkish language.
+This repository contains the official implementation of the paper **Transformer Based Punctuation Restoration for Turkish**. This paper got accepted from UBMK23 and will be published at IEEE Explore. Aim of this work is correctly place pre-decided punctuation marks in a given text.  We present three pre-trained transformer models to predict **period(.)**, **comma(,)** and **question(?)** marks for the Turkish language.
 
 ## Table of Contents
 * [Usage](#usage)
@@ -28,6 +28,7 @@ This repository contains the official implementation of the paper Transformer Ba
 * [Data](#data)
 * [Available Models](#models)
 * [Results](#results)
+* [Contact](#contact)
 
 ## Usage <a class="anchor" id="usage"></a>
 
@@ -81,3 +82,6 @@ ConvBERT: https://huggingface.co/uygarkurt/convbert-restore-punctuation-turkish
 |   BERT   | 0.972602 | 0.947504 | 0.959952 | 0.576145 | 0.700010 | 0.632066 | 0.927642 | 0.911342 | 0.919420 | 0.825506 | 0.852952 | 0.837146 |
 |  ELECTRA | 0.972602 | 0.948689 | 0.960497 | 0.576800 | 0.710208 | 0.636590 | 0.920325 | 0.921074 | 0.920699 | 0.823242 | 0.859990 | 0.839262 |
 | ConvBERT | 0.972731 | 0.946791 | 0.959585 | 0.576964 | 0.708124 | 0.635851 | 0.922764 | 0.913849 | 0.918285 | 0.824153 | 0.856254 | 0.837907 |
+
+## Contact <a class="contact" id="contact"></a>
+You can contact me with this email address: uygarsci@gmail.com
