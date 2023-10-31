@@ -24,7 +24,6 @@ This paper also contains a corresponding presentation published on YouTube with 
 
 [![Thumbnail](./assets/thumbnail.png)](https://www.youtube.com/watch?v=PGAEamxP2Cw)
 
-
 ## Table of Contents
 * [Usage](#usage)
     * [Inference](#inference)
@@ -33,6 +32,7 @@ This paper also contains a corresponding presentation published on YouTube with 
 * [Available Models](#models)
 * [Results](#results)
 * [Contact](#contact)
+* [Citation](#citation)
 
 ## Usage <a class="anchor" id="usage"></a>
 
@@ -47,7 +47,6 @@ sample_text = "Türkiye toprakları üzerindeki ilk yerleşmeler Yontma Taş Dev
 
 out = pipe(sample_text)
 ```
-
 To use a different pre-trained model you can just replace the `model` argument with one of the other [available models](#models) we provided.
 
 ### Training <a class="anchor" id="train"></a>
@@ -77,7 +76,7 @@ BERT: https://huggingface.co/uygarkurt/bert-restore-punctuation-turkish \
 ELECTRA: https://huggingface.co/uygarkurt/electra-restore-punctuation-turkish \
 ConvBERT: https://huggingface.co/uygarkurt/convbert-restore-punctuation-turkish
 
-## Results <a class="results" id="results"></a>
+## Results <a class="anchor" id="results"></a>
 `Precision` and `Recall` and `F1` scores for each model and punctuation mark are summarized below.
 
 |   Model  |          |  PERIOD  |          |          |  COMMA   |          |          | QUESTION |          |          | OVERALL  |          |
@@ -87,5 +86,19 @@ ConvBERT: https://huggingface.co/uygarkurt/convbert-restore-punctuation-turkish
 |  ELECTRA | 0.972602 | 0.948689 | 0.960497 | 0.576800 | 0.710208 | 0.636590 | 0.920325 | 0.921074 | 0.920699 | 0.823242 | 0.859990 | 0.839262 |
 | ConvBERT | 0.972731 | 0.946791 | 0.959585 | 0.576964 | 0.708124 | 0.635851 | 0.922764 | 0.913849 | 0.918285 | 0.824153 | 0.856254 | 0.837907 |
 
-## Contact <a class="contact" id="contact"></a>
+## Contact <a class="anchor" id="contact"></a>
 You can contact me with this email address: uygarsci@gmail.com
+
+## Citation <a class="anchor" id="citation"></a>
+```
+@INPROCEEDINGS{10286690,
+    author={Kurt, Uygar and Çayır, Aykut},
+    booktitle={2023 8th International Conference on Computer Science and Engineering (UBMK)}, 
+    title={Transformer Based Punctuation Restoration for Turkish}, 
+    year={2023},
+    volume={},
+    number={},
+    pages={169-174},
+    doi={10.1109/UBMK59864.2023.10286690}
+}
+```
