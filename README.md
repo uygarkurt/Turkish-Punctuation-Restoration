@@ -12,7 +12,6 @@
     </a>
 </div>
 
-<br/>
 <div align="center">
     <p>Liked our work? give us a ⭐!</p>
 </div>
