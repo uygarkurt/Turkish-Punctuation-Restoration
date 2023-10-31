@@ -1,17 +1,8 @@
 # Transformer Based Punctuation Restoration Models for Turkish
 
 <div align="center">
-    <a href="">
-        <img alt="open-source-image"
-		src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103">
-    </a>
-    <a href="https://arxiv.org/abs/tba">
-        <img alt="arxiv-image"
-		src="https://img.shields.io/badge/arXiv-tba-b31b1b.svg">
-    </a>
-    <a href="https://github.com/Naereen/StrapDown.js/blob/master/LICENSE">
-        <img alt="license-image"
-		src="https://badgen.net/github/license/Naereen/Strapdown.js">
+    <a href="https://ieeexplore.ieee.org/document/10286690">
+        <img src="https://img.shields.io/badge/IEEE-00629b?style=for-the-badge">
     </a>
 </div>
 <br/>
@@ -19,7 +10,13 @@
     <p>Liked our work? give us a ⭐!</p>
 </div>
 
-This repository contains the official implementation of the paper **Transformer Based Punctuation Restoration for Turkish**. This paper got accepted from UBMK23 and will be published at IEEE Explore. Aim of this work is correctly place pre-decided punctuation marks in a given text.  We present three pre-trained transformer models to predict **period(.)**, **comma(,)** and **question(?)** marks for the Turkish language.
+This repository contains the official implementation of the paper [Transformer Based Punctuation Restoration for Turkish](https://ieeexplore.ieee.org/document/10286690). This paper got accepted from UBMK23. Aim of this work is correctly place pre-decided punctuation marks in a given text.  We present three pre-trained transformer models to predict **period(.)**, **comma(,)** and **question(?)** marks for the Turkish language.
+
+### YouTube Presentation
+This paper also contains a corresponding presentation published on YouTube with the title **Transformer Based Punctuation Restoration for Turkish - Paper Presentation**
+
+[![Thumbnail](./assets/thumbnail.png)](https://www.youtube.com/watch?v=PGAEamxP2Cw)
+
 
 ## Table of Contents
 * [Usage](#usage)
